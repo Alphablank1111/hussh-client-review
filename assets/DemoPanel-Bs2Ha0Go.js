@@ -1,1 +1,0 @@
-import{t as e}from"./index-D8KZ8SM1.js";import{n as t}from"./preload-helper-Dkw-HfA6.js";var n=t();function r(){return(0,n.jsx)(e,{})}export{r as default};
