@@ -1,0 +1,22 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./three-runtime-tPB3ckMf.js","./three.module-DyvNVaNF.js"])))=>i.map(i=>d[i]);
+import{a as e,n as t,r as n,t as r}from"./preload-helper-Dkw-HfA6.js";import{t as i}from"./index-B11tLlXs.js";var a=e(n(),1),o=t();function s({label:e,progress:t}){let n=(0,a.useRef)(null),s=i();return(0,a.useEffect)(()=>{let i=n.current,a=s.current;if(!i||!a)return;let o=!1,c;async function l(){let[n]=await Promise.all([r(()=>import(`./three-runtime-tPB3ckMf.js`),__vite__mapDeps([0,1]),import.meta.url),document.fonts.load(`600 180px "DM Sans Variable"`)]);if(o||!i||!a)return;let s=document.createElement(`canvas`),l=s.getContext(`webgl2`,{alpha:!0,antialias:!1});if(!l){i.dataset.fallback=`true`,i.dataset.ready=`true`;return}let u=new n.WebGLRenderer({canvas:s,context:l,alpha:!0,powerPreference:`low-power`,antialias:!1});u.setPixelRatio(Math.min(window.devicePixelRatio,1.15)),u.setClearColor(0,0);let d=document.createElement(`canvas`);d.width=2048,d.height=1024;let f=d.getContext(`2d`);if(!f){u.dispose();return}f.font=`600 260px "DM Sans Variable"`,f.textAlign=`center`,f.textBaseline=`middle`,f.fillStyle=`#111310`,f.fillText(e.toUpperCase(),1024,220,1950);let p=document.createElement(`canvas`);p.width=2048,p.height=512;let m=p.getContext(`2d`);m.font=f.font,m.textAlign=`center`,m.textBaseline=`middle`,m.strokeStyle=`#111310`,m.fillStyle=`#111310`,m.lineWidth=4,m.strokeText(e.toUpperCase(),1024,258,1950),m.globalCompositeOperation=`destination-out`,m.fillText(e.toUpperCase(),1024,258,1950),f.drawImage(p,0,512);let h=new n.CanvasTexture(d);h.minFilter=n.LinearFilter,h.generateMipmaps=!1;let g=new n.Scene,_=new n.PerspectiveCamera(38,1,.1,20);_.position.z=4.5;let v=new n.PlaneGeometry(7.8,3.9,64,24),y={uMap:{value:h},uTime:{value:0},uScroll:{value:t.get()},uReveal:{value:0}},b=new n.ShaderMaterial({transparent:!0,depthWrite:!1,uniforms:y,vertexShader:`
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform float uScroll;
+          void main() {
+            vUv = uv;
+            vec3 p = position;
+            p.z += sin(p.x * 0.85 + uTime * 0.45 + uScroll * 2.0) * 0.34;
+            p.y += sin(p.x * 0.9 + uTime * 0.3) * 0.15;
+            p.x += sin(uScroll * 3.14) * 0.3;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+          }
+        `,fragmentShader:`
+          varying vec2 vUv;
+          uniform sampler2D uMap;
+          uniform float uReveal;
+          void main() {
+            float alpha = texture2D(uMap, vUv).a;
+            gl_FragColor = vec4(vec3(0.08, 0.09, 0.07), alpha * 0.16 * uReveal);
+          }
+        `}),x=new n.Mesh(v,b);g.add(x),s.setAttribute(`aria-hidden`,`true`),i.appendChild(s);let S=0,C=!1,w=0,T=0,E=i.closest(`.product-takeover`),D=e=>{let t=Math.max(0,Math.min(1,e));return t*t*(3-2*t)},O=()=>{let e=T-a.scrollTop;w=D((a.clientHeight*.94-e)/(a.clientHeight*.66))},k=()=>{T=E.getBoundingClientRect().top-a.getBoundingClientRect().top+a.scrollTop,O()},A=e=>{let n=S?Math.min((e-S)/1e3,.04):1/60;y.uTime.value+=n,y.uReveal.value+=(w-y.uReveal.value)*(1-Math.exp(-10*n)),S=e,y.uScroll.value=t.get(),x.rotation.z=-.07+y.uScroll.value*.14,x.rotation.y=Math.sin(y.uTime.value*.23)*.08,u.render(g,_)},j=()=>{let e=Math.max(i.clientWidth,1),t=Math.max(i.clientHeight,1);u.setSize(e,t),_.aspect=e/t,_.position.z=e<700?6.8:4.5,_.updateProjectionMatrix(),k()},M=()=>{S=0,u.setAnimationLoop(C&&!document.hidden?A:null)},N=new ResizeObserver(j),P=new IntersectionObserver(e=>{C=e[0].isIntersecting,O(),M()},{root:a,rootMargin:`80px`});N.observe(i);let F=new ResizeObserver(k);a.firstElementChild&&F.observe(a.firstElementChild),a.addEventListener(`scroll`,O,{passive:!0}),document.addEventListener(`visibilitychange`,M);let I=e=>{e.preventDefault(),u.setAnimationLoop(null),delete i.dataset.ready};s.addEventListener(`webglcontextlost`,I),j(),c=()=>{u.setAnimationLoop(null),N.disconnect(),F.disconnect(),P.disconnect(),a.removeEventListener(`scroll`,O),document.removeEventListener(`visibilitychange`,M),s.removeEventListener(`webglcontextlost`,I),v.dispose(),b.dispose(),h.dispose(),u.dispose(),s.remove(),delete i.dataset.ready},await u.compileAsync(g,_),o||(u.render(g,_),i.dataset.ready=`true`,P.observe(i))}return l().catch(()=>{o||(i.dataset.fallback=`true`,i.dataset.ready=`true`)}),()=>{o=!0,c?.()}},[e,t,s]),(0,o.jsx)(`div`,{ref:n,className:`product-type`,"aria-hidden":`true`,children:(0,o.jsxs)(`div`,{className:`product-type-fallback`,children:[e,(0,o.jsx)(`br`,{}),e]})})}export{s as default};
