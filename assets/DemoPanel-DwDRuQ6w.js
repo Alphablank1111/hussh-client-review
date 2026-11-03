@@ -1,0 +1,1 @@
+import{r as e,t}from"./index-CFWW66Q9.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as default};
